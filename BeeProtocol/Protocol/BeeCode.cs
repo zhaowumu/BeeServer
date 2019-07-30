@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BeeGame.Protocol
 {
@@ -152,12 +149,11 @@ namespace BeeGame.Protocol
             using(var ms = new MemoryStream(valueBytes))
             {
                 var bf = new BinaryFormatter();
-
                 // todo 不知道可不可行，可以考虑用其他序列化
                 return bf.Deserialize(ms) as BeeMessage;
             }
         }
 
-    #endregion
+        #endregion
     }
 }

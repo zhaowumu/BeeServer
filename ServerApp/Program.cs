@@ -13,8 +13,19 @@ namespace ServerApp
         {
             Console.WriteLine("——————游戏App——————");
 
-            var server = new BeeServer.BeeServer(new MyGameServer());
+            var gameServer = new MyGameServer();
+
+            var server = new BeeServer.BeeServer(gameServer);
             server.Start(8888,2);
+
+            while (true)
+            {
+                var s = Console.ReadLine();
+
+                gameServer.SendMessage(s);
+            }
+
+
 
             Console.ReadKey();
         }

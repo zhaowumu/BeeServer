@@ -10,11 +10,14 @@ namespace ServerApp
 {
     public class MyGameServer : IBeeApplication
     {
+        private BeeClient _beeClient;
+
         /// 连接事件
         public void OnAccept(BeeClient beeClient)
         {
             Console.WriteLine("应用层---OnAccepte");
-            beeClient.Send(1,1,new BeeMessage() { BeeName = "bee" });
+            beeClient.Send(0,0,new BeeMessage() { BeeName = "bee" });
+            _beeClient = beeClient;
         }
         /// 断开事件
         public void OnDisconnect(BeeClient beeClient,string reason)
@@ -24,7 +27,12 @@ namespace ServerApp
         /// 接收事件
         public void OnReceive(BeeClient beeClient, BeePacket packet)
         {
-            
+            Console.WriteLine("应用层---OnReceive" + packet.Message.BeeName);
+        }
+
+        public void SendMessage(string msg)
+        {
+            _beeClient.Send(0, 0, new BeeMessage() { BeeName = msg });
         }
     }
 }

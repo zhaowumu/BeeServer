@@ -14,5 +14,7 @@ namespace BeeServer
         void OnDisconnect(BeeClient beeClient,string reason);
 
         void OnReceive(BeeClient beeClient, BeePacket packet);
+
+        void SendMessage(string msg);
     }
 }

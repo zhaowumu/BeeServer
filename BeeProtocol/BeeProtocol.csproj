@@ -46,6 +46,7 @@
     <Compile Include="Protocol\BeeCode.cs" />
     <Compile Include="Protocol\BeeMessage.cs" />
     <Compile Include="Protocol\BeePacket.cs" />
+    <Compile Include="Protocol\Message\LoginQ.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
