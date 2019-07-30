@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BeeGame.Protocol;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -128,7 +129,7 @@ namespace BeeServer
             Console.WriteLine($"{clientBee.Socket.RemoteEndPoint} -连接完成！当前蜜蜂池:{_clientBeePool.Count}/{_maxClientBee}");
             clientBee.StartReceive();
             // 返回给应用层 通知连接成功
-            _application.OnAccepte(clientBee);
+            _application.OnAccept(clientBee);
 
 
             // 尾递归，eventArgs参数复用
@@ -145,10 +146,10 @@ namespace BeeServer
         /// <summary>
         /// 服务蜜蜂收到一条消息
         /// </summary>
-        private void ReceiveData(BeeClient beeClient, BeeMessage msg)
+        private void ReceiveData(BeeClient beeClient, BeePacket packet)
         {
             // undone 给应用层
-            _application.OnReceive(beeClient, msg);
+            _application.OnReceive(beeClient, packet);
         }
 
 

@@ -41,13 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BeeMessage.cs" />
     <Compile Include="BeeClient.cs" />
     <Compile Include="BeeClientPool.cs" />
-    <Compile Include="BeeCode.cs" />
     <Compile Include="IBeeApplication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BeeServer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BeeProtocol\BeeProtocol.csproj">
+      <Project>{5b412715-46e1-46a7-8bb5-f8fbe633d403}</Project>
+      <Name>BeeProtocol</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

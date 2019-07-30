@@ -4,26 +4,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BeeServer
+namespace BeeGame.Protocol
 {
-    public class BeeMessage
+    /// <summary>
+    /// 蜜蜂送的快递，其中必须有地址收件人
+    /// </summary>
+    public class BeePacket
     {
         public int OpCode { get; set; }
 
         public int SubCode { get; set; }
 
-        public object Value { get; set; }
+        public BeeMessage Message { get; set; }
 
-        public BeeMessage()
+        public BeePacket()
         {
 
         }
 
-        public BeeMessage(int opCode,int subCode,object value)
+        public BeePacket(int opCode,int subCode, BeeMessage Message)
         {
             this.OpCode = opCode;
             this.SubCode = subCode;
-            this.Value = value;
+            this.Message = Message;
         }
     }
 }

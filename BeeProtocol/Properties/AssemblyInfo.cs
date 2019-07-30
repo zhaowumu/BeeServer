@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("Protocol")]
+[assembly: AssemblyTitle("BeeProtocol")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Protocol")]
+[assembly: AssemblyProduct("BeeProtocol")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("aa887f91-4d65-4b44-aa71-c397a89d0a39")]
+[assembly: Guid("5b412715-46e1-46a7-8bb5-f8fbe633d403")]
 
 // 程序集的版本信息由下列四个值组成: 
 //

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BeeGame.Protocol;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +9,10 @@ namespace BeeServer
 {
     public interface IBeeApplication
     {
-        void OnAccepte(BeeClient beeClient);
+        void OnAccept(BeeClient beeClient);
+
         void OnDisconnect(BeeClient beeClient,string reason);
 
-        void OnReceive(BeeClient beeClient,BeeMessage message);
+        void OnReceive(BeeClient beeClient, BeePacket packet);
     }
 }

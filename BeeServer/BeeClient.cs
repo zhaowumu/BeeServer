@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BeeGame.Protocol;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -22,7 +23,7 @@ namespace BeeServer
 
         private bool _isSending;
 
-        public delegate void DecodeDataOver(BeeClient clientBee, BeeMessage msg);
+        public delegate void DecodeDataOver(BeeClient clientBee, BeePacket packet);
 
         /// 一条消息解析完成回调
         public DecodeDataOver DecodeOver;
@@ -115,7 +116,7 @@ namespace BeeServer
         {
             _isDecoding = true;
 
-            var data = BeeCode.DecodePacket(ref _dataCache);
+            var data = BeeCode.TryGetPacket(ref _dataCache);
 
             if(data == null)
             {
@@ -125,9 +126,9 @@ namespace BeeServer
             }
             
             // todo  转为类
-            var msg = BeeCode.DecodeMessage(data);
+            var packet = BeeCode.DecodePacket(data);
 
-            DecodeOver?.Invoke(this, msg);
+            DecodeOver?.Invoke(this, packet);
 
             // 尾递归 一直处理缓存数据
             DecodingPacket();
@@ -137,17 +138,24 @@ namespace BeeServer
 
     #region 发送
 
-        public void Send(int opCode, int subCode, object value)
+        /// 我要寄蜜蜂快递，地址收件人包裹都给你了，你看着办
+        public void Send(int opCode, int subCode, BeeMessage message)
         {
-            // todo 发送的object可以优化
+            // todo 发送的object可以优化,每次都new 不好吧
 
-            var msg = new BeeMessage(opCode, subCode, value);
+            // bee 打个包
+            var packet = new BeePacket(opCode, subCode, message);
 
-            var data   = BeeCode.EncodeMessage(msg);
-            var packet = BeeCode.EncodePaket(data);
+            // 转成二进制
+            var data   = BeeCode.EncodePacket(packet);
 
-            _sendQueue.Enqueue(packet);
+            // 称重，收费
+            var bytes = BeeCode.AddHeadLength(data);
 
+            // 加入发送队列
+            _sendQueue.Enqueue(bytes);
+
+            // 发走
             if(!_isSending)
             {
                 SendPacket();

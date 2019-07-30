@@ -51,6 +51,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BeeProtocol\BeeProtocol.csproj">
+      <Project>{5b412715-46e1-46a7-8bb5-f8fbe633d403}</Project>
+      <Name>BeeProtocol</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BeeServer\BeeServer.csproj">
       <Project>{c07208f6-bf21-4e88-bb2e-7fc3a319c538}</Project>
       <Name>BeeServer</Name>

@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerApp", "ServerApp\Serv
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeeServer", "BeeServer\BeeServer.csproj", "{C07208F6-BF21-4E88-BB2E-7FC3A319C538}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Protocol", "Protocol\Protocol.csproj", "{AA887F91-4D65-4B44-AA71-C397A89D0A39}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeeProtocol", "BeeProtocol\BeeProtocol.csproj", "{5B412715-46E1-46A7-8BB5-F8FBE633D403}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{C07208F6-BF21-4E88-BB2E-7FC3A319C538}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C07208F6-BF21-4E88-BB2E-7FC3A319C538}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C07208F6-BF21-4E88-BB2E-7FC3A319C538}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AA887F91-4D65-4B44-AA71-C397A89D0A39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AA887F91-4D65-4B44-AA71-C397A89D0A39}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AA887F91-4D65-4B44-AA71-C397A89D0A39}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AA887F91-4D65-4B44-AA71-C397A89D0A39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B412715-46E1-46A7-8BB5-F8FBE633D403}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B412715-46E1-46A7-8BB5-F8FBE633D403}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B412715-46E1-46A7-8BB5-F8FBE633D403}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B412715-46E1-46A7-8BB5-F8FBE633D403}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
